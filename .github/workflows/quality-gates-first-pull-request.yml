@@ -6,7 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '18 4 * * 3'
+    - cron: '18 4 * * *'
+  workflow_dispatch:
+    inputs:
+      sut:
+        description: 'Testsystem IP address'
+        required: true
 
 jobs:
   analyze:
